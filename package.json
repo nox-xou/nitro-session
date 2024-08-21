@@ -6,7 +6,7 @@
   "author": "kiki-kanri",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kiki-kanri/nitro-session.git"
+    "url": "git+https://github.com/nox-xou/nitro-session.git"
   },
   "type": "module",
   "module": "./dist/index.mjs",
