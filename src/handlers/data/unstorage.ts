@@ -2,6 +2,7 @@ import consola from 'consola';
 import type { H3Event } from 'h3';
 import { nanoid } from 'nanoid';
 import { createStorage, prefixStorage } from 'unstorage';
+import redisDriver from 'unstorage/drivers/redis'
 import type { Storage } from 'unstorage';
 
 import type { DataStorageOptions } from '../../types/options';
@@ -24,7 +25,7 @@ export class UnstorageDataHandler {
 		if (!options?.driver || options?.driver === 'memory') storage = createStorage({ driver: (await importModule('unstorage/drivers/memory'))() });
 		else {
 			try {
-				const driver = await importModule(`unstorage/drivers/${options.driver}`);
+				const driver = options.driver === 'redis'? redisDriver : await importModule(`unstorage/drivers/${options.driver}`);
 				storage = prefixStorage(createStorage({ driver: driver(options.options) }), options.key?.prefix || 'session');
 			} catch (error) {
 				consola.error(error);

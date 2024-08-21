@@ -19,7 +19,7 @@
     "bumplog": "changelogen --bump",
     "dev": "nitro dev"
   },
-  "types": "./index.d.ts",
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "consola": "^3.2.3",
     "lodash-es": "^4.17.21",
