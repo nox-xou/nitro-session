@@ -14,10 +14,10 @@ export class CookieTokenHandler {
 		this.#serializeOptions = {
 			...merge(
 				{
-					httpOnly: true,
-					path: '/',
-					sameSite: 'lax',
-					secure: true
+					// httpOnly: true,
+					// path: '/',
+					// sameSite: 'lax',
+					// secure: true
 				},
 				omit(options, 'name')
 			),
