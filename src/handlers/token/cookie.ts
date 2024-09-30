@@ -13,12 +13,7 @@ export class CookieTokenHandler {
 		this.#name = options?.name || 'session';
 		this.#serializeOptions = {
 			...merge(
-				{
-					httpOnly: true,
-					path: '/',
-					sameSite: 'lax',
-					secure: true
-				},
+				{},
 				omit(options, 'name')
 			),
 			maxAge
