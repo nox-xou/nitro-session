@@ -9,6 +9,10 @@
     "url": "git+https://github.com/nox-xou/nitro-session.git"
   },
   "type": "module",
+  "module": "./dist/index.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "ts-project-builder ./src/index.ts ./src/runtime/utils.ts -f esm --clean --preserve-modules",
     "build:playground": "nitropack build",
